@@ -1,0 +1,46 @@
+<html>
+<head>
+<meta charset="utf8" />
+<title>오늘의 네이버 웹툰</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" />
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="jumbotron">
+                <h1>오늘의 네이버 웹툰</h1>
+                <p>
+                    <a class="btn btn-primary btn-lg" href="http://comic.naver.com/webtoon/weekday.nhn" target="_blank">
+                    사이트로 이동
+                    </a>
+                </p>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    {% for comic in comic_list %}
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="{{ comic.url }}" target="_blank">
+                                    <img class="media-object" src="{{ comic.img.src }}" />
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">{{ comic.title }}</h4>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="panel-footer">
+                    &copy; 2017. 여러분의 이름.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
